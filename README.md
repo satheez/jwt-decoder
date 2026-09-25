@@ -46,7 +46,7 @@ A powerful, client-side JWT (JSON Web Token) decoder and explorer built with mod
 ## 🛠️ Development
 
 ### Prerequisites
-- Node.js 18+ 
+- Node.js 22 (see `.nvmrc`). CI and GitHub Pages use this LTS line, which Astro 5 documents as the current upgrade target (`22.0.0` or higher).
 - npm
 
 ### Getting Started
@@ -100,9 +100,14 @@ npm run build
 
 The built files will be in the `dist/` directory, ready for deployment to any static hosting provider.
 
+### Continuous integration and GitHub Pages
+
+- **CI** (`.github/workflows/ci.yml`) runs on pull requests and on pushes to `main`. It installs dependencies with `npm ci` and runs `npm run build` on Node.js 22.
+- **Deploy** (`.github/workflows/deploy.yml`) runs only on pushes to `main`, or when started manually. It builds the site the same way and publishes `./dist` to GitHub Pages.
+
 ## 📝 License
 
-MIT License - feel free to use this project for any purpose.
+[MIT](LICENSE) — the same license used on Satheez's other open-source packages.
 
 ## 🤝 Contributing
 
