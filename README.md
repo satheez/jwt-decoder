@@ -103,7 +103,11 @@ The built files will be in the `dist/` directory, ready for deployment to any st
 ### Continuous integration and GitHub Pages
 
 - **CI** (`.github/workflows/ci.yml`) runs on pull requests and on pushes to `main`. It installs dependencies with `npm ci` and runs `npm run build` on Node.js 22.
-- **Deploy** (`.github/workflows/deploy.yml`) runs only on pushes to `main`, or when started manually. It builds the site the same way and publishes `./dist` to GitHub Pages.
+- **Deploy** (`.github/workflows/deploy.yml`) is the GitHub Pages publish path. It runs on pushes to `main`, or when started manually. It builds the site the same way and publishes `./dist` with `actions/configure-pages`, `actions/upload-pages-artifact`, and `actions/deploy-pages`.
+
+In the repository, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**. Leave **Deploy from a branch** off. That legacy source runs Jekyll against the repository root (`/`), which fails on Astro files and never publishes `./dist`.
+
+`public/.nojekyll` is copied into the build output so the published files are not passed through Jekyll. Astro writes styles and scripts under `_astro/`, and Jekyll skips directories whose names start with `_`. The upload step sets `include-hidden-files: true` because `actions/upload-pages-artifact` omits dotfiles unless that option is enabled.
 
 ## 📝 License
 
