@@ -1,3 +1,7 @@
+# Publishes the Astro production build (./dist) to GitHub Pages.
+# Required repository setting: Settings → Pages → Build and deployment → Source = GitHub Actions.
+# Do not use "Deploy from a branch". That legacy path runs Jekyll on the repository root,
+# which fails on Astro source files and does not publish this build.
 name: Deploy to GitHub Pages
 
 on:
