@@ -6,6 +6,8 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+// `base: '/jwt-decoder'` leaves BASE_URL without a trailing slash when trailingSlash is "ignore".
+const faviconHref = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/favicon.svg`;
 ---
 
 <!DOCTYPE html>
@@ -14,7 +16,7 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="JWT Explorer - Decode and explore JSON Web Tokens" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={faviconHref} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <script is:inline>
