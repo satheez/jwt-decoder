@@ -46,7 +46,7 @@ A powerful, client-side JWT (JSON Web Token) decoder and explorer built with mod
 ## 🛠️ Development
 
 ### Prerequisites
-- Node.js 22 (see `.nvmrc`). CI and GitHub Pages use this LTS line, which Astro 5 documents as the current upgrade target (`22.0.0` or higher).
+- Node.js 22.12.0 or higher (see `.nvmrc`). CI and GitHub Pages use the Node.js 22 LTS line, which is the minimum Astro 7 supports.
 - npm
 
 ### Getting Started
@@ -86,7 +86,7 @@ A powerful, client-side JWT (JSON Web Token) decoder and explorer built with mod
 
 The app includes sensible defaults but can be customized:
 
-- **Tailwind Config**: `tailwind.config.mjs`
+- **Styles**: `src/styles/global.css` (Tailwind CSS, loaded with the `@tailwindcss/vite` plugin)
 - **Astro Config**: `astro.config.mjs`
 - **TypeScript**: `tsconfig.json`
 
