@@ -46,7 +46,7 @@ A powerful, client-side JWT (JSON Web Token) decoder and explorer built with mod
 ## 🛠️ Development
 
 ### Prerequisites
-- Node.js 22.12.0 or higher (see `.nvmrc`). CI and GitHub Pages use the Node.js 22 LTS line, which is the minimum Astro 7 supports.
+- Node.js 22.23.4 or higher (see `.nvmrc`). CI and GitHub Pages pin Node.js 22.23.4, the minimum Astro 7.4.2 supports.
 - npm
 
 ### Getting Started
@@ -102,7 +102,7 @@ The built files will be in the `dist/` directory, ready for deployment to any st
 
 ### Continuous integration and GitHub Pages
 
-- **CI** (`.github/workflows/ci.yml`) runs on pull requests and on pushes to `main`. It installs dependencies with `npm ci` and runs `npm run build` on Node.js 22.
+- **CI** (`.github/workflows/ci.yml`) runs on pull requests and on pushes to `main`. It installs dependencies with `npm ci` and runs `npm run build` on Node.js 22.23.4.
 - **Deploy** (`.github/workflows/deploy.yml`) is the GitHub Pages publish path. It runs on pushes to `main`, or when started manually. It builds the site the same way and publishes `./dist` with `actions/configure-pages`, `actions/upload-pages-artifact`, and `actions/deploy-pages`.
 
 In the repository, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions**. Leave **Deploy from a branch** off. That legacy source runs Jekyll against the repository root (`/`), which fails on Astro files and never publishes `./dist`.
