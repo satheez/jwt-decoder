@@ -10,10 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.4.4",
+    "@tailwindcss/vite": "^4.3.5",
+    "astro": "^7.4.7",
     "jwt-decode": "^4.0.0",
     "tailwindcss": "^4.3.3",
-    "vite": "^8.3.5"
+    "vite": "^8.3.6"
   }
 }
